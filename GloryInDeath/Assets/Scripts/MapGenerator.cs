@@ -28,7 +28,7 @@ public class MapGenerator : MonoBehaviour {
 
     void BoardSetup() {
         boardHolder = new GameObject("Board").transform;
-        Vector2 center = new Vector2(Mathf.Ceil(columns/2), Mathf.Ceil(rows/2));
+        Vector2 center = new Vector2(Mathf.Ceil(columns/2) - 1, Mathf.Ceil(rows/2) - 1);
         for (int x = 0; x < columns-1; x++)
         {
             for (int y = 0; y < rows-1; y++)
