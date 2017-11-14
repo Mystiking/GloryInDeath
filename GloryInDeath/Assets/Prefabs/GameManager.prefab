@@ -52,12 +52,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f68fae6016f4be4ba7f78fb5318a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
+  columns: 32
+  rows: 32
   waterTiles:
   - {fileID: 1756560735999822, guid: a3b2db6c057e146d8808feb977e66c00, type: 2}
   groundTiles:
   - {fileID: 1478299435848420, guid: 3df8533bfc0064be893f07258f67ce79, type: 2}
+  - {fileID: 1701264288084090, guid: 8b7256e3eebc94346a46583214077652, type: 2}
+  - {fileID: 1598213524086314, guid: 488ee9228f8eb4d3a812142cd789148a, type: 2}
+  - {fileID: 1693464357748502, guid: 69de166845da04e17994d33adeacefc2, type: 2}
+  - {fileID: 1813146056384920, guid: 6860013dfe9ab42838210d4b979792d8, type: 2}
+  - {fileID: 1610352901876714, guid: fa0e55ab28d4e4c5d950faad8342b36f, type: 2}
+  - {fileID: 1394987500058524, guid: d0872855247314972b66006ea89ab0ee, type: 2}
+  - {fileID: 1206999777534780, guid: ae6675ecafe8d4bdd969326cb2969fa9, type: 2}
+  boarderTiles: []
+  beachObjectTiles:
+  - {fileID: 1448596132290514, guid: b8071f518e15849c8bd6028bbd5da34b, type: 2}
+  - {fileID: 1744069875881214, guid: 8018846aaf4e94420a15656474e52351, type: 2}
+  - {fileID: 1915982511379710, guid: ccb5b5e377d714555848dea60b4ce03d, type: 2}
+  - {fileID: 1834020873872976, guid: 3e04c08be91094d63b4a80a0a1bd4a8d, type: 2}
+  - {fileID: 1308419566745344, guid: 3bd4fcefc088d46b6b9e6002aa9193d6, type: 2}
+  beachObjectCount:
+    minimum: 13
+    maximum: 19
 --- !u!114 &114985755484976284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,4 +86,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35364171166c943bbb86977eef72504e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardScript: {fileID: 114387178629158290}
+  boardScript: {fileID: 0}
