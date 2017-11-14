@@ -14,6 +14,7 @@ public class MapGenerator : MonoBehaviour {
 
     public GameObject[] waterTiles;
     public GameObject[] groundTiles;
+    public GameObject[] enemyTiles;
     public GameObject[] boarderTilesRight;
     public GameObject[] beachObjectTiles;
 
@@ -32,6 +33,7 @@ public class MapGenerator : MonoBehaviour {
     }
 
     public Count beachObjectCount = new Count(5,9);
+    public Count enemyObjectCount = new Count(5,9);
 
     void Init() {
         gridPositions.Clear();
@@ -95,6 +97,7 @@ public class MapGenerator : MonoBehaviour {
         BoardSetup();
         Init();
         LayoutObjectAtRandom(beachObjectTiles,beachObjectCount.minimum,beachObjectCount.maximum);
+        LayoutObjectAtRandom(enemyTiles,enemyCount.minimum,enemyCount.maximum);
 
     }
 }
