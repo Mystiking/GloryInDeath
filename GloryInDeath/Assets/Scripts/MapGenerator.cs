@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour {
@@ -12,8 +14,24 @@ public class MapGenerator : MonoBehaviour {
 
     public GameObject[] waterTiles;
     public GameObject[] groundTiles;
+    public GameObject[] boarderTilesRight;
+    public GameObject[] beachObjectTiles;
 
     private Transform boardHolder;
+
+    [Serializable]
+    public class Count
+    {
+        public int minimum;
+        public int maximum;
+        public Count(int min, int max)
+        {
+            minimum = min;
+            maximum = max;
+        }
+    }
+
+    public Count beachObjectCount = new Count(5,9);
 
     void Init() {
         gridPositions.Clear();
@@ -37,9 +55,15 @@ public class MapGenerator : MonoBehaviour {
                 GameObject toInstantiate;
                 Vector2 pos = new Vector2(x, y);
                 // TODO change (-1) to some percentage
+                Debug.Log(Vector2.Distance(center,pos));
                 if (Vector2.Distance(center, pos) > (rows/2 - 1)) {
                     toInstantiate = waterTiles[Random.Range(0, waterTiles.Length)];
-                } else {
+                }
+                else if(Vector2.Distance(center,pos) < (rows/2 -1) && Vector2.Distance(center,pos) > (rows/2 -1) -1 )
+                {
+                    toInstantiate = boarderTilesRight[Random.Range(0,boarderTilesRight.Length)];
+                } 
+                else {
                     toInstantiate = groundTiles[Random.Range(0, groundTiles.Length)];
                 }
 
@@ -63,11 +87,14 @@ public class MapGenerator : MonoBehaviour {
             Vector3 randomPosition = RandomPosition();
             GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
             Instantiate(tileChoice,randomPosition,Quaternion.identity);
+
         }
     }
 
     public void SetupScene() {
         BoardSetup();
         Init();
+        LayoutObjectAtRandom(beachObjectTiles,beachObjectCount.minimum,beachObjectCount.maximum);
+
     }
 }
