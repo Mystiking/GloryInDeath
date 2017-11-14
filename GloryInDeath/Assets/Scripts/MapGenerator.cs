@@ -59,10 +59,10 @@ public class MapGenerator : MonoBehaviour {
                 if (Vector2.Distance(center, pos) > (rows/2 - 1)) {
                     toInstantiate = waterTiles[Random.Range(0, waterTiles.Length)];
                 }
-                else if(Vector2.Distance(center,pos) < (rows/2 -1) && Vector2.Distance(center,pos) > (rows/2 -1) -1 )
-                {
-                    toInstantiate = boarderTilesRight[Random.Range(0,boarderTilesRight.Length)];
-                } 
+                //else if(Vector2.Distance(center,pos) < (rows/2 -1) && Vector2.Distance(center,pos) > (rows/2 -1) -1 )
+                //{
+                //    toInstantiate = boarderTilesRight[Random.Range(0,boarderTilesRight.Length)];
+                //} 
                 else {
                     toInstantiate = groundTiles[Random.Range(0, groundTiles.Length)];
                 }
